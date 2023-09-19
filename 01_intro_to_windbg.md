@@ -1,3 +1,5 @@
+## MODULE 1: Introduction to WinDBG
+
 ### WinDBG shortcuts:
 - **<kbd>F6</kbd>** - Attach to process
 
@@ -17,10 +19,10 @@
 - `ph` - step until a branching instruction is reached (includes condition, unconditional branches, function calls, return instructions)
 - `lm` - display all loaded modules including start and end address in Virtual Memory Space
   > **NOTE**: symbols wouldn't be loaded when the debugged application starts for the first time, so use the `.reload /f` command
+- `lm m <module>` - browse module list showing start & end address of a specific module
+  - ex 1: `lm m ole32`
 - `lm m <partial_module_name>*` - filter all modules start with the partially mentioned module name
   - ex 1: `lm m kernel*`
-- `lm m <module>` - browse module list
-  - ex 1: `lm m ole32`
 - `x` - Examine to learn more about the symbols of loaded modules
   - ex 1: `x kernelbase!CreateProc*`
 
@@ -118,6 +120,8 @@
   - Hardware Breakpoints:
     - `ba <r|w|e> <size_in_byte> <memory_address>` - setup a harware breakpoint
       - ex 1: `ba e 1 kernel32!WriteFile` - setup a hardware breakpoint for a byte size of 1 (check whether that specific 1 byte is executed(e)) when the function **WriteFile()** gets executed **(e)** by the processor (typed random string in notepad and search for the specific string in memory and a hbp was set using its memory address to see for any writes in that region)
+
+---
 
 ### MISC:
   - Software breakpoint used to replace an instruction with `INT 3` at the location where a breakpoint is set
