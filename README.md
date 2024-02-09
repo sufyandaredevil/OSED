@@ -1,4 +1,4 @@
-# OSED Notes:
+# OSED (Offensive Security Exploit Development) Notes:
 
 ## Table of Contents:
  - [Introduction to Windows Debugger](01_intro_to_windbg.md)
